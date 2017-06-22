@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+<style>
+
+	body {
+		height: 1000px;
+	}
+	.container {
+		font-size:  16px;
+	}
+
+	div {
+		
+		box-sizing: border-box;
+	}
+
+	.main {
+		width: 100%;
+		height: 400px;
+		background-image: url("header-background.jpg");
+		background-size: cover;
+		text-align: center;
+	
+	}
+
+	.navBar {
+		width: 100%;
+		background-color: black;
+		padding: 10px;
+		text-align: left;
+		position: fixed;
+		z-index: 2;
+		opacity: 0.7;
+	}
+
+	.navBar img{
+		width: 200px;
+		height: auto;
+	}
+	.main h2 {
+		position: relative;
+		font-size: 3em;
+		
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	
+	
+	}
+
+	.blue {
+		color: blue;
+	}
+
+	.menu {
+		display: inline-block;
+		width: 25%;
+		height: 300px;
+		
+
+	}
+
+	ul{
+		list-style-type: none;
+		padding: 20px;
+		line-height: 3.0;
+	}
+
+	.courses{
+		margin-top: -4px;
+		display: inline-block;
+		width: 75%;
+		height: 300px;
+		margin-right: -4px;
+		padding: 10px;
+		vertical-align: top;
+	}
+
+	.inlineBlock {
+		display: inline-block;
+		border: 1px solid black;
+		width: 23%;
+		height: 50%;
+		font-weight: bold;
+		vertical-align: top;
+
+	}
+
+	.menu li:hover{
+		color: red;
+	}
+
+	.inlineBlock h1{
+		font-size: 2em;
+		font-weight: bold;
+		vertical-align: top;
+	}
+	
+</style>
+
+</head>
+<body>
+
+    
+<div class="main">
+	<div class="navBar">
+		<a href="http://www.brainstation.io">
+		<img src="Brainstation-Logo.png" alt="company logo">
+		</a>
+	</div>
+	<h2 class="blue">Become a Creator</h2>
+</div>
+<div class="menu">
+	<ul class="blue">
+		<li>Home</li>
+		<li>Courses</li>
+		<li>Events</li>
+		<li>About</li>
+		<li>Contact</li>
+	</ul>
+</div>
+<div class="courses" >
+	<h1 class="blue">Part-time and Full-time Courses</h1>
+	<div class="inlineBlock" >User Experience Immersive bootcamp</div>
+	<div class="inlineBlock" >Digital Marketing</div>
+	<div class="inlineBlock" >iOS development</div>
+	<div class="inlineBlock" >Web Development Immersive</div>
+</div>
+
+
+     
+</body>
+</html>
