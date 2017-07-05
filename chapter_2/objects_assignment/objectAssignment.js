@@ -1,83 +1,67 @@
 
-
-
-//function createNewEntry(title, content, author) {
-
-
-   // displayEntry(entry);
-
-
-
-//function displayEntry(entry) {
-
-
-
-
-   /* var parent = $('ul#myUL');
-    var child1 = "<li> x </li>";
-    var child2 = "<li> y </li>";
-    var child3 = "<li> z </li>";
-
-    parent.append(child1);
-*/
+$(document).ready(function () {
 
 
 
     function Journal(name) {
-    this.entries = [];
-    this.name = name;
+        this.entries = [];
+        this.name = name;
 
-}
-
-
-function Entry(title, content, author) {
-    this.title = title;
-    this.content = content;
-    this.author = author;
-}
+    }
 
 
-var myJournal = new Journal('chris');
+    function Entry(title, content, author) {
+        this.title = title;
+        this.content = content;
+        this.author = author;
+    }
 
 
+    var myJournal = new Journal('chris');
 
 
 
 
-    $('#submitbutton').click(function () {
-
-        var myTitle = $('#input1').val();
-        var myContent = $('#input2').val();
-        var myAuthor = $('#input3').val();
-        createEntry(myTitle,myContent,myAuthor);
-        
 
 
-        function createEntry(){
-        var entry = new Entry(myTitle, myContent, 'myAuthor');
-        entry.title
-        entry.content
-        entry.content
+    $('#submitbutton').click(function (e) {
+        e.preventDefault();
+        if (!$('#title').val() || !$('#content').val() || !$('#author').val()) {
+            alert(" please fill in all the feilds!")
+        } else {
+            var entry = new Entry($('#title').val(), $('#content').val(), $('#author').val());
+            $('#title').val("");
+            $('#content').val("");
+            $('#author').val("");
+            addToJournal(entry);
         }
-
-        myJournal.entries[0].push('name: '+ entry.title);
-        myJournal.entries[0].push('content: '+ entry.content);
-        myJournal.entries[0].push('author: '+ entry.author);
-    
-        $("#myLi1").text(myJournal.entries[0].name);
-        $("#myLi2").text(myJournal.entries[0].content);
-        $("#myLi3").text(myJournal.entries[0].author);
-
-    
     });
 
+    function addToJournal(entry) {
+        myJournal.entries.push(entry);
+        displayEntry(entry);
+    }
+
+
+    function displayEntry(entry) {
+
+        for (var i = 0; i < myJournal.entries.length; i++) {
+            console.log(myJournal)
+            var parent = $(".JournalDisplay");
+            var child = "<ul><li>" + "Title: " + myJournal.entries[i].title + "</li><li>" + "Content: " + myJournal.entries[i].content + "</li><li>" + " Author: " + myJournal.entries[i].author + "</li></ul>";
+            console.log(child)
+            parent.append(child);
+            myJournal.entries = [];
+
+        }
+
+
+    }
 
 
 
 
 
-
-
-
+})
 
 

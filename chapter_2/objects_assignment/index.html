@@ -7,68 +7,48 @@
     ">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
+
         </script>
     <script type="text/javascript" src="objectAssignment.js">
+
     </script>
- 
-        
+
+
 
 </head>
 
-<body>
 
-    <header>
-        <h1>
-            <p> Christine Thamo</p>
-            <p> ....</p>
-        </h1>
-    </header>
+<body class="container-fluid" style="background-color:black">
 
-    <section>
-        <form action="">
+    <div class="hero-image" class="jumbotron">
+        <div class="hero-text">
+            <h1 style="font-size:50px">Journal Of Christine Thamo</h1>
+            <h2 style="font-size: 35px">...........A journey within........</h2>
 
-            Title:<br>
-            <input type="text" name="titleOfThisEntry" id="input1">
-            <br> Content:
-            <br>
-            <input type="text" name="contentOfThisEntry" id="input2">
-            <br> By :<br>
-            <input type="text" name="authorOfThisEntry" id='input3'>
-            <br>
-            <br>
-            <input type="submit" name="submit" id="submitbutton">
+        </div>
+    </div>
+
+    <div class="form">
+        <form action="" method="post">
+
+            <label for="title">Title</label>
+            <input type="text" name="titleOfThisEntry" id="title" placeholder="Your title here" <label for="content">Content</label>
+            <textarea name="contentOfEntry" id="content" cols="30" rows="10" placeholder="write your thoughts here"></textarea>
+            <label for="author">Author</label>
+            <input type="text" name="authorOfThisEntry" id='author' placeholder="Your name here">
+
+
+            <button type="submit" name="submit" id="submitbutton">Submit</button>
         </form>
 
 
-    </section>
+    </div>
 
 
-    <section>
-
-
-
-        <ul id="myUL">
-            <li id="myLi1"> </li>
-            <li id="myLi2"> </li>
-            <li id="myLi3"> </li>
-
-        </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <section class="JournalDisplay">
 
     </section>
 
