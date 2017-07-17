@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <div class="container">
+            <h1 class="text-center">Search results</h1>
+              
+               <% for (var i=0; i<movie.length; i++){ %>
+            <a class="movie-link" href="movie/<%= movie[i].id%>">
+            <div class="media movie-list-item">
+                <div class="media-left">
+                    <div class="poster-container">
+                        <img class="media-object movie-poster" src="<%= movie[i].poster %>" />
+                    </div>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">
+                        <%= movie[i].title %>
+                        <span class="badge"><%= movie[i].rated %></span>
+                    </h4>
+                    <div>
+                        <%=movie[i].plot %>
+                    </div>
+                    <div class="released-date">
+                        Released: <%= movie[i].released %>
+                    </div>
+                </div>
+            </div>
+            </a>
+            
+            <% } %>
+
+        </div>  
+</body>
+</html>

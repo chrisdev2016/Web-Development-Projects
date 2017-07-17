@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/styles.css">        
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 class="text-center">Movie Database</h1>
+
+            <form method='get' action='/search'  >
+             <input name='searchFor' class="col-xs-6" id="filterTable-input" data-type="search" placeholder="Search For Movies..." >
+               <input class= "col-xs-3" list="search-option" name="searchCriteria" placeholder="search by">
+               <datalist id="search-option">
+               <option value="Title">
+               <option value="Rating">
+               <option value="Year">
+               </datalist>
+             <input type="submit" value="submit">
+            </form>
+
+
+
+
+              
+               <% for (var i=0; i<movies.length; i++){ %>
+            <a class="movie-link" href="movie/<%= movies[i].id%>">
+            <div class="media movie-list-item">
+                <div class="media-left">
+                    <div class="poster-container">
+                        <img class="media-object movie-poster" src="<%= movies[i].poster %>" />
+                    </div>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">
+                        <%= movies[i].title %>
+                        <span class="badge"><%= movies[i].rated %></span>
+                    </h4>
+                    <div>
+                        <%=movies[i].plot %>
+                    </div>
+                    <div class="released-date">
+                        Released: <%= movies[i].released %>
+                    </div>
+                </div>
+            </div>
+            </a>
+            
+            <% } %>
+
+        </div>
+    </body>
+</html>
+
