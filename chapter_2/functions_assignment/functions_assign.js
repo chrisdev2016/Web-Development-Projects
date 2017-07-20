@@ -99,7 +99,7 @@ function order(item1, item2, item3) {
         console.log(" error! please order 3 items");
     }
 
-    else {
+     else {
         cook(item1, item2, item3);
 
     }

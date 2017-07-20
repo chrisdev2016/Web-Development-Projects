@@ -30,30 +30,27 @@ $(document).ready(function () {
             alert(" please fill in all the feilds!")
         } else {
             var entry = new Entry($('#title').val(), $('#content').val(), $('#author').val());
+
             $('#title').val("");
-            $('#content').val("");
-            $('#author').val("");
-            addToJournal(entry);
+            $('#content').val("")
+            $('#author').val("")
+    
+            displayEntry(entry);
         }
     });
 
-    function addToJournal(entry) {
-        myJournal.entries.push(entry);
-        displayEntry(entry);
-    }
+   
 
 
     function displayEntry(entry) {
 
-        for (var i = 0; i < myJournal.entries.length; i++) {
-            console.log(myJournal)
+        
             var parent = $(".JournalDisplay");
-            var child = "<ul><li>" + "Title: " + myJournal.entries[i].title + "</li><li>" + "Content: " + myJournal.entries[i].content + "</li><li>" + " Author: " + myJournal.entries[i].author + "</li></ul>";
-            console.log(child)
+            var child = "<ul><li>" + "Title: " + entry.title + "</li><li>" + "Content: " + entry.content + "</li><li>" + " Author: " + entry.author + "</li></ul>";
             parent.append(child);
             myJournal.entries = [];
 
-        }
+        
 
 
     }
