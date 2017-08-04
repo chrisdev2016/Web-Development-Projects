@@ -1,4 +1,4 @@
-body {
+app {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -15,7 +15,7 @@ body {
 }
 
 .bg{
-  background-color: black;
+  background-image:url("images.jpg");
   background-position: center;
   background-repeat:repeat;
   background-size: cover;
@@ -25,4 +25,14 @@ body {
 .font{
   color: white;
   font-size: 14px;
+}
+
+.color{
+  background-color: black;
+
+}
+
+.relative{
+  position:relative;
+  left : 200px;
 }

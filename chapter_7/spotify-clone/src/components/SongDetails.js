@@ -21,12 +21,12 @@ class SongDetails extends Component {
         return (
             <div>
                 
-                    <h1>title:{mySong.title}</h1>
-                    <h3> id:{mySong.id}</h3>
-                    <p>description:{mySong.description}</p>
+                    <h1>{mySong.title}</h1>
+                    
+                    <p>{mySong.description}</p>
                 
         
-                    <button onClick={()=>{this.props.playSong(mySong.id)}}>play </button>
+                    <button  onClick={()=>{this.props.playSong(mySong.id)}}><i className="glyphicon glyphicon-play"></i> </button>
 
             </div>
         )

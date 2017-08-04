@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './index.css';
 
 class App extends Component {
   constructor() {
@@ -21,38 +22,40 @@ class App extends Component {
   changeSong(direction) {
     this.setState({
       index: this.state.index + direction,
-      playStatus:true
-    
-    }, ()=>{
+      playStatus: true
+
+    }, () => {
       var playsong = document.getElementById('audioElementId');
-    playsong.play()
+      playsong.play()
     })
 
 
-        
+
   }
 
 
   playHandler() {
- 
+
     var playsong = document.getElementById('audioElementId');
     playsong.play()
-  
+
 
   }
 
   playSong(id) {
-     
-    this.setState({
-      index:parseInt( id),
-      playStatus:true
-    }, ()=>{ var playsong = document.getElementById('audioElementId')
-    playsong.play()})
 
-   
+    this.setState({
+      index: parseInt(id),
+      playStatus: true
+    }, () => {
+      var playsong = document.getElementById('audioElementId')
+      playsong.play()
+    })
+
+
   }
 
- 
+
 
   render() {
     const songs = this.props.route.songs
@@ -60,14 +63,17 @@ class App extends Component {
 
     return (
       <div className="App bg">
-        <div className="btn-group">
-          <button onClick={()=>{this.changeSong(-1)}} disabled={this.state.index===0} ><i className='glyphicon glyphicon-step-backward'/></button>
+
+
+        {React.cloneElement(this.props.children, { songsArray: songs, changeSong: this.changeSong, playSong: this.playSong })}
+        {/*if you dont use clone element, you can use just {this.props.children} here like before*/}
+        <div className="btn-group relative">
+          <button onClick={() => { this.changeSong(-1) }} disabled={this.state.index === 0} ><i className='glyphicon glyphicon-step-backward' /></button>
           <button><audio onplay={this.playHandler} id="audioElementId" src={songs[this.state.index].source} type='audio/mpeg' controls ></audio></button>
-          <button onClick={()=>{ this.changeSong(1)}} disabled={this.state.index===songs.length-1} ><i className="glyphicon glyphicon-step-forward"/> </button>
+          <button onClick={() => { this.changeSong(1) }} disabled={this.state.index === songs.length - 1} ><i className="glyphicon glyphicon-step-forward" /> </button>
         </div>
 
-        {React.cloneElement(this.props.children, { songsArray: songs, changeSong: this.changeSong ,playSong:this.playSong})}
-        {/*if you dont use clone element, you can use just {this.props.children} here like before*/}
+
       </div>
     );
   }
