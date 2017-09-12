@@ -107,8 +107,6 @@ function order(item1, item2, item3) {
 
 
 
-
-
 function cook(orderitem1, orderitem2, orderitem3) {
     var array2 = [orderitem1, orderitem2, orderitem3]
     var menuArray = generateMenu();
@@ -124,9 +122,6 @@ function cook(orderitem1, orderitem2, orderitem3) {
         }
 
     }
-
-
-
 
     console.log('your order will take ' + orderTime + " " + "seconds");
     setTimeout(function () {
@@ -155,8 +150,5 @@ function serve(cookItem1, cookItem2, cookItem3) {
     console.log("your meal is ready! please pay " + " " + price + "dollars");
     return price;
 }
-
-
-
 
 order('Lobster', 'Wild Rice', 'Wine');
