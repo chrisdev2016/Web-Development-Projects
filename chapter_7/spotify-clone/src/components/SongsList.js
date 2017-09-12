@@ -26,12 +26,12 @@ class SongsList extends Component {
         let items = songsList.map((item, i) => {
             return (
 
-                <li className="list-group-item li" key={i}>
+                <li className="list-group-item color" key={i}>
 
                     <button type="button" className="btn" onClick={() => this.props.playSong(item.id)}>
                         <i className="glyphicon glyphicon-play"></i>
                     </button>
-                    <Link to={"songs/" + item.id}> {item.title}</Link>
+                    <Link className="font" to={"songs/" + item.id}> {item.title}</Link>
 
                 </li>
 
@@ -51,7 +51,7 @@ class SongsList extends Component {
                         <div className="navbar-header">
                             <a className="navbar-brand" href="#">SPOTIFY-CLONE</a>
                         </div>
-                        <ul className="nav navbar-nav">
+                        <ul className="nav navbar-nav ">
                             <li ><a href="#">Home</a></li>
                             <li className="active"><a href="#">Page 1</a></li>
                             <li><a href="#">Page 2</a></li>
