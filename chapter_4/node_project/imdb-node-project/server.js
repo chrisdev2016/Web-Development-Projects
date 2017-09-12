@@ -21,8 +21,8 @@ app.get('/movie', (req, res) => {
     movies: moviesList
   }
 
-
   res.render('pages/index', data);
+  
 });
 
 // Route endpoint to each endpoint
