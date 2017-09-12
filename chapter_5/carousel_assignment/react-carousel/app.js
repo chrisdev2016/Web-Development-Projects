@@ -69,9 +69,6 @@ class ImageComponents extends React.Component {
 }
 
 
-
-
-
 class ButtonDivision extends React.Component {
 	render() {
 		return (
